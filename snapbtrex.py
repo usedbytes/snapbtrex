@@ -708,18 +708,18 @@ def sync_local(operations, sync_dir):
 
 def log_trace(fmt, *args, **kwargs):
     tt = time.strftime(DATE_FORMAT, time.gmtime(None)) + ": "
-    if args is not None:
+    if args is not None and len(args) > 0:
         print tt + (fmt % args)
-    elif kwargs is not None:
+    elif kwargs is not None and len(kwargs) > 0:
         print tt + (fmt % kwargs)
     else:
         print tt + fmt
 
 
 def default_trace(fmt, *args, **kwargs):
-    if args is not None:
+    if args is not None and len(args) > 0:
         print fmt % args
-    elif kwargs is not None:
+    elif kwargs is not None and len(kwargs) > 0:
         print fmt % kwargs
     else:
         print fmt
